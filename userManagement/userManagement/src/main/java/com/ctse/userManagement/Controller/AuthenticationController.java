@@ -2,6 +2,8 @@ package com.ctse.userManagement.Controller;
 
 import com.ctse.userManagement.dto.AuthenticationRequest;
 import com.ctse.userManagement.dto.AuthenticationResponse;
+import com.ctse.userManagement.dto.PasswordResetRequestDto;
+import com.ctse.userManagement.dto.PasswordResetVerifyDto;
 import com.ctse.userManagement.dto.RegisterRequest;
 import com.ctse.userManagement.dto.UpdatePasswordRequest;
 import com.ctse.userManagement.services.AuthenticationService;
@@ -35,6 +37,22 @@ public class AuthenticationController {
             @RequestBody UpdatePasswordRequest request
     ) {
         authenticationService.updatePassword(request);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/reset-password-request")
+    public ResponseEntity<Void> resetPasswordRequest(
+            @RequestBody PasswordResetRequestDto request
+    ) {
+        authenticationService.initiatePasswordReset(request);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/reset-password-verify")
+    public ResponseEntity<Void> resetPasswordVerify(
+            @RequestBody PasswordResetVerifyDto request
+    ) {
+        authenticationService.completePasswordReset(request);
         return ResponseEntity.ok().build();
     }
 } 
