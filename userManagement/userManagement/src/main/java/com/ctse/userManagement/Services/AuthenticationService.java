@@ -1,5 +1,6 @@
 package com.ctse.userManagement.Services;
 
+import com.ctse.userManagement.Repository.UserRepository;
 import com.ctse.userManagement.dto.AuthenticationRequest;
 import com.ctse.userManagement.dto.AuthenticationResponse;
 import com.ctse.userManagement.dto.PasswordResetRequestDto;
@@ -8,7 +9,6 @@ import com.ctse.userManagement.dto.RegisterRequest;
 import com.ctse.userManagement.dto.UpdatePasswordRequest;
 import com.ctse.userManagement.model.Role;
 import com.ctse.userManagement.model.User;
-import com.ctse.userManagement.repository.UserRepository;
 import com.ctse.userManagement.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,7 +24,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
-    private final com.ctse.userManagement.services.OtpService otpService;
+    private final OtpService otpService;
     private final EmailService emailService;
 
     public AuthenticationResponse register(RegisterRequest request) {

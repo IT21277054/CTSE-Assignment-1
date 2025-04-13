@@ -1,4 +1,4 @@
-package com.ctse.userManagement.repository;
+package com.ctse.userManagement.Repository;
 
 import com.ctse.userManagement.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;

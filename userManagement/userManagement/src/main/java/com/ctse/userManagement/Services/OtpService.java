@@ -1,4 +1,4 @@
-package com.ctse.userManagement.services;
+package com.ctse.userManagement.Services;
 
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
