@@ -1,12 +1,12 @@
 package com.ctse.userManagement.Controller;
 
+import com.ctse.userManagement.Services.AuthenticationService;
 import com.ctse.userManagement.dto.AuthenticationRequest;
 import com.ctse.userManagement.dto.AuthenticationResponse;
 import com.ctse.userManagement.dto.PasswordResetRequestDto;
 import com.ctse.userManagement.dto.PasswordResetVerifyDto;
 import com.ctse.userManagement.dto.RegisterRequest;
 import com.ctse.userManagement.dto.UpdatePasswordRequest;
-import com.ctse.userManagement.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

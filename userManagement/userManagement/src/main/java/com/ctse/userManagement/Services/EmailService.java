@@ -1,4 +1,4 @@
-package com.ctse.userManagement.services;
+package com.ctse.userManagement.Services;
 
 import com.postmarkapp.postmark.Postmark;
 import com.postmarkapp.postmark.client.ApiClient;
@@ -29,11 +29,14 @@ public class EmailService {
 
         try {
             MessageResponse response = client.deliverMessage(message);
-            if (!response.getErrorCode().equals("0")) {
+            if (response.getErrorCode() != 0) {
                 throw new RuntimeException("Failed to send email: " + response.getMessage());
             }
+            System.out.println("Email sent successfully. Message ID: " + response.getMessageId());
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Failed to send email", e);
         }
+
     }
 } 

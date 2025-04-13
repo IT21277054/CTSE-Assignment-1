@@ -1,4 +1,4 @@
-package com.ctse.userManagement.services;
+package com.ctse.userManagement.Services;
 
 import com.ctse.userManagement.dto.AuthenticationRequest;
 import com.ctse.userManagement.dto.AuthenticationResponse;
@@ -13,7 +13,6 @@ import com.ctse.userManagement.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
-    private final OtpService otpService;
+    private final com.ctse.userManagement.services.OtpService otpService;
     private final EmailService emailService;
 
     public AuthenticationResponse register(RegisterRequest request) {
